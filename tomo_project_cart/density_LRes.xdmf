@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<Xdmf xmlns:xi="http://www.w3.org/2001/XInclude" Version="2.0">
+<Domain>
+<Grid Name="FEM_Mesh_Mesh">
+
+	<Time Value="0.0" />
+
+	<Topology Type="Quadrilateral" NumberOfElements="885">
+		<DataItem ItemType="Function" Dimensions="885 4" Function="JOIN($0, $1, $3, $2)">
+		<DataItem ItemType="HyperSlab" Dimensions="885 1" Name="C0">
+				<DataItem Dimensions="3 2" Format="XML"> 0 0 1 1 885 1 </DataItem>
+				<DataItem Format="HDF" NumberType="Int" Dimensions="885 1">mesh_LRes.h5:/en_map</DataItem>
+		</DataItem>
+		<DataItem ItemType="HyperSlab" Dimensions="885 1" Name="C1">
+				<DataItem Dimensions="3 2" Format="XML"> 0 1 1 1 885 1 </DataItem>
+				<DataItem Format="HDF" NumberType="Int" Dimensions="885 1">mesh_LRes.h5:/en_map</DataItem>
+		</DataItem>
+		<DataItem ItemType="HyperSlab" Dimensions="885 1" Name="C2">
+				<DataItem Dimensions="3 2" Format="XML"> 0 2 1 1 885 1 </DataItem>
+				<DataItem Format="HDF" NumberType="Int" Dimensions="885 1">mesh_LRes.h5:/en_map</DataItem>
+		</DataItem>
+		<DataItem ItemType="HyperSlab" Dimensions="885 1" Name="C3">
+				<DataItem Dimensions="3 2" Format="XML"> 0 3 1 1 885 1 </DataItem>
+				<DataItem Format="HDF" NumberType="Int" Dimensions="885 1">mesh_LRes.h5:/en_map</DataItem>
+		</DataItem>
+		</DataItem>
+	</Topology>
+	<Geometry Type="XYZ">
+		<DataItem ItemType="Function"  Dimensions="960 3" Function="JOIN($0, $1, 0*$1)">
+			<DataItem ItemType="HyperSlab" Dimensions="960 1" Name="XCoords">
+				<DataItem Dimensions="3 2" Format="XML"> 0 0 1 1 960 1 </DataItem>
+				<DataItem Format="HDF" NumberType="Float" Precision="8" Dimensions="960 2">mesh_LRes.h5:/vertices</DataItem>
+			</DataItem>
+			<DataItem ItemType="HyperSlab" Dimensions="960 1" Name="YCoords">
+				<DataItem Dimensions="3 2" Format="XML"> 0 1 1 1 960 1 </DataItem>
+				<DataItem Format="HDF" NumberType="Float" Precision="8" Dimensions="960 2">mesh_LRes.h5:/vertices</DataItem>
+			</DataItem>
+		</DataItem>
+	</Geometry>
+	<Attribute Type="Scalar" Center="Node" Name="densityField">
+			<DataItem Format="HDF" NumberType="Float" Precision="8" Dimensions="960 1">densityField_LRes.h5:/data</DataItem>
+	</Attribute>
+</Grid>
+</Domain>
+</Xdmf>
